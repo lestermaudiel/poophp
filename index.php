@@ -1,46 +1,65 @@
 <?php
 // DEFINICION DE LA CLASE PRODUCTO
- producto de clase {
+class Producto{
     // DEFINICION DE ATRIBUTOS
-    público  $ precio ;
-    público  $ nombre ;
-    público  $ disponible ;
+    public $precio;
+    public $nombre;
+    public $disponible;
 
     // DEFINICION DE METODOS
 
-    public  function  mostrarNombreProducto () : void {
-        echo  $ esto -> nombre ;
+    public function mostrarNombreProducto() : void{
+        echo $this->nombre;
     }
 
-    public  function  mostrarPrecioProducto () : void {
-        echo  $ esto -> precio ;
+    public function mostrarPrecioProducto() : void{
+        echo $this->precio;
+    }
+    public function mostrarDisponibleProducto() : void{
+        if ($this->disponible){
+         echo "Disponible";
+        }else{
+            echo "No Disponible ";
+        }
+        
     }
 
 }
-
 // CREACIÓN DE UN OBJETO
 // CREAR UNA INSTANCIA
-$ mesa = producto nuevo  ();
+$mesa = new Producto(); 
 
-$ mesa -> nombre = " Mesa ";
-$ mesa -> precio = 500 ;
-$ mesa -> disponible = true ;
+$mesa->nombre = "Mesa";
+$mesa->precio = 500;
+$mesa->disponible = true;
 
-$ silla = producto nuevo  ();
+$silla = new Producto(); 
 
-$ mesa -> nombre = " Silla grande ";
-$ mesa -> precio = 100 ;
-$ mesa -> disponible = false ;
+$silla->nombre = "Silla grande";
+$silla->precio = 100;
+$silla->disponible = false;
 
+echo "<pre>";
+var_dump($mesa);
+echo "</pre>";
+echo "<pre>";
+var_dump($silla);
+echo "</pre>";
 
+echo "<pre>";
+$mesa->mostrarNombreProducto();
+echo "<br>";
+$mesa->mostrarPrecioProducto();
+echo "<br>";
+$mesa->mostrarDisponibleProducto();
+echo "</pre>";
+echo "<br>";
+echo "<pre>";
+$silla->mostrarNombreProducto();
+echo "<br>";
+$silla->mostrarPrecioProducto();
+echo "<br>";
+$silla->mostrarDisponibleProducto();
+echo "</pre>";
 
-echo " <pre> ";
-var_dump( $ mesa );
-eco " </pre> ";
-echo " <pre> ";
-var_dump( $ silla );
-eco " </pre> ";
-
-$ mesa -> mostrarNombreProducto ();
-$ silla -> mostrar Nombre Producto ();
-$ mesa -> mostrarPrecioProducto ();
+?>
